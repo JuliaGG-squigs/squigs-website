@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Squigs — winzige Knetwesen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Caveat:wght@500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page" data-screen-label="Squigs Homepage">
+
+    <!-- ============ NAV ============ -->
+    <header class="nav">
+      <a class="nav__logo" href="#top" aria-label="Squigs Startseite">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <!-- handmade-clay blob: irregular, chunky, slightly tilted left -->
+            <path fill="var(--lav)" d="
+              M 7 21
+              C 5 11, 13 4, 22 5
+              C 31 5, 38 11, 38 21
+              C 39 30, 33 38, 24 39
+              C 14 39, 6 33, 7 21 Z" />
+            <!-- subtle bottom shading lump for clay feel -->
+            <path fill="var(--lav-deep)" opacity=".28" d="
+              M 9 26
+              C 11 35, 19 39, 26 38
+              C 33 37, 37 32, 38 27
+              C 35 33, 27 36, 19 35
+              C 14 34, 11 31, 9 26 Z" />
+            <!-- LEFT eye — clearly bigger (the signature) -->
+            <ellipse cx="16" cy="18.5" rx="6.2" ry="7" fill="#FFFCF3" />
+            <ellipse cx="17" cy="20"   rx="2.6" ry="3.1" fill="#2E2336" />
+            <!-- highlight glint -->
+            <circle  cx="15.4" cy="18" r="1" fill="#FFFCF3" />
+            <!-- RIGHT eye — clearly smaller, set a bit higher & inward -->
+            <ellipse cx="28" cy="19.5" rx="3.5" ry="4" fill="#FFFCF3" />
+            <ellipse cx="28.4" cy="20.6" rx="1.4" ry="1.8" fill="#2E2336" />
+            <!-- tiny coral cheek for warmth (sits on the larger eye side) -->
+            <ellipse cx="11" cy="27" rx="2.4" ry="1.6" fill="var(--pnk)" opacity=".55" />
+          </svg>
+        </span>
+        <span class="logo-word">squigs</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#gallery">Galerie</a>
+        <a href="#videos">Videos</a>
+        <a href="#commissions">Bestellen</a>
+        <a href="#about">Über</a>
+      </nav>
+      <button class="nav__menu" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero__featured">
+        <video class="hero__video"
+               src="assets/hero.mp4"
+               autoplay muted loop playsinline
+               aria-hidden="true"></video>
+        <span class="hero__loop-tag">▸ läuft</span>
+        <div class="hero__sticker hero__sticker--1">handgemacht</div>
+        <div class="hero__sticker hero__sticker--2">Unikat</div>
+        <span class="hero__doodle hero__doodle--star" aria-hidden="true">✦</span>
+      </div>
+
+      <div class="hero__content">
+        <h1 class="hero__title">
+          winzige
+          <span class="hero__title--accent">Knetwesen.</span>
+          <span class="hero__title--script">jedes ein Unikat.</span>
+        </h1>
+
+        <p class="hero__sub">
+          Mit den Händen geformt in einer kleinen Küchenwerkstatt.
+          Keine Formen, keine zwei gleich – nur kleine knetige Wesen,
+          die ihr kleines Leben leben.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#gallery" class="btn btn--primary">in die Galerie schauen</a>
+          <a href="#commissions" class="btn btn--ghost">deinen bestellen →</a>
+        </div>
+
+        <div class="hero__meta">
+          <span><b>87</b> Squigs adoptiert</span>
+          <span class="dot"></span>
+          <span>gemacht in einer winzigen Berliner Küche</span>
+        </div>
+
+        <span class="hero__doodle hero__doodle--squig" aria-hidden="true">
+          <svg viewBox="0 0 60 24" fill="none"><path d="M2 12 C 10 2, 18 22, 26 12 S 42 2, 50 12 S 58 22, 58 12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>✿ winzig</span><span>♡ knetig</span><span>✦ albern</span>
+        <span>✿ handgemacht</span><span>♡ Unikat</span><span>✦ aus Knete</span>
+        <span>✿ winzig</span><span>♡ knetig</span><span>✦ albern</span>
+        <span>✿ handgemacht</span><span>♡ Unikat</span><span>✦ aus Knete</span>
+      </div>
+    </div>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section" id="gallery">
+      <div class="section__head">
+        <span class="eyebrow">die Familie</span>
+        <h2 class="section__title">lerne die Squigs kennen</h2>
+        <p class="section__sub">Eine wachsende Schar von Knet‑Wesen. Tipp auf eine Farbe, um deinen Liebling zu finden.</p>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="nach Farbe filtern">
+        <button class="chip is-active" data-filter="all">
+          <span class="chip__swatch chip__swatch--all"></span> alle <span class="chip__count" data-count="all"></span>
+        </button>
+        <button class="chip" data-filter="pink"><span class="chip__swatch" style="--c:var(--pnk)"></span> rosa <span class="chip__count" data-count="pink"></span></button>
+        <button class="chip" data-filter="lavender"><span class="chip__swatch" style="--c:var(--lav)"></span> lila <span class="chip__count" data-count="lavender"></span></button>
+        <button class="chip" data-filter="blue"><span class="chip__swatch" style="--c:var(--sky)"></span> blau <span class="chip__count" data-count="blue"></span></button>
+        <button class="chip" data-filter="green"><span class="chip__swatch" style="--c:var(--mnt)"></span> grün <span class="chip__count" data-count="green"></span></button>
+        <button class="chip" data-filter="red"><span class="chip__swatch" style="--c:#D34F62"></span> rot <span class="chip__count" data-count="red"></span></button>
+        <button class="chip" data-filter="yellow"><span class="chip__swatch" style="--c:var(--yel)"></span> gelb <span class="chip__count" data-count="yellow"></span></button>
+        <button class="chip" data-filter="orange"><span class="chip__swatch" style="--c:#E8884C"></span> orange <span class="chip__count" data-count="orange"></span></button>
+        <button class="chip" data-filter="grey"><span class="chip__swatch" style="--c:#8A8590"></span> grau <span class="chip__count" data-count="grey"></span></button>
+        <button class="chip" data-filter="brown"><span class="chip__swatch" style="--c:#9B6B4F"></span> braun <span class="chip__count" data-count="brown"></span></button>
+      </div>
+
+      <div class="gallery" id="galleryGrid">
+
+        <figure class="card card--wide" data-color="all" style="--pos: 50% 50%">
+          <div class="card__imgwrap"><img src="assets/squig-family-lineup.jpg" alt="Die ganze Squig-Familie"></div>
+          <figcaption>
+            <p class="quote">„heute alle da. fast alle."</p>
+            <div class="row"><b>Die ganze Familie</b><span class="tag">Klassenfoto</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="red" style="--pos: 55% 60%">
+          <div class="card__imgwrap"><img src="assets/squig-umbrella.jpg" alt="Norbert mit Schirm"></div>
+          <figcaption>
+            <p class="quote">„regen ist nur glas, das fällt."</p>
+            <div class="row"><b>Norbert</b><span class="tag">rot · Schirm</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-color="pink" style="--pos: 50% 75%">
+          <div class="card__imgwrap"><img src="assets/squig-pink-blue.jpg" alt="Pim und Boop"></div>
+          <figcaption>
+            <p class="quote">„pst — schon gehört?"</p>
+            <div class="row"><b>Pim &amp; Boop</b><span class="tag">rosa · blau</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-color="green" style="--pos: 50% 70%">
+          <div class="card__imgwrap"><img src="assets/squig-trio-window.jpg" alt="Das Fensterbank-Trio"></div>
+          <figcaption>
+            <p class="quote">„einer rennt. einer schreit. einer fragt sich, warum."</p>
+            <div class="row"><b>Fensterbank‑Trio</b><span class="tag">grün · blau</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="lavender" style="--pos: 55% 60%">
+          <div class="card__imgwrap"><img src="assets/squig-birthday.jpg" alt="Geburtstags-Bande in der Tasse"></div>
+          <figcaption>
+            <p class="quote">„kuchen? jetzt? sehr gerne."</p>
+            <div class="row"><b>Geburtstags‑Bande</b><span class="tag">lila · blau</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="blue" style="--pos: 50% 35%">
+          <div class="card__imgwrap"><img src="assets/squig-dog-walk.jpg" alt="Squig führt Hund die Treppe runter"></div>
+          <figcaption>
+            <p class="quote">„der hund muss raus. auch wenn keiner so wirklich will."</p>
+            <div class="row"><b>Mo &amp; sein Hund</b><span class="tag">blau · Spaziergang</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-color="green" style="--pos: 50% 30%">
+          <div class="card__imgwrap"><img src="assets/squig-treadmill.jpg" alt="Squig auf dem Laufband"></div>
+          <figcaption>
+            <p class="quote">„heute schon 0,0 km. starker tag."</p>
+            <div class="row"><b>Sporty</b><span class="tag">türkis · Cardio</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="green" style="--pos: 50% 45%">
+          <div class="card__imgwrap"><img src="assets/squig-scale.jpg" alt="Grüner Squig auf der Waage, erschrocken"></div>
+          <figcaption>
+            <p class="quote">„das war doch der toast schuld."</p>
+            <div class="row"><b>Klops</b><span class="tag">grün · Waage</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="yellow" style="--pos: 50% 55%">
+          <div class="card__imgwrap"><img src="assets/squig-sunflower.jpg" alt="Gelber Squig klettert an Sonnenblume"></div>
+          <figcaption>
+            <p class="quote">„ich wachse mit."</p>
+            <div class="row"><b>Sonny</b><span class="tag">gelb · Kletterer</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-color="yellow" style="--pos: 60% 45%">
+          <div class="card__imgwrap"><img src="assets/squig-yellow-plant.jpg" alt="Gelber Squig umarmt Pflanzenstamm"></div>
+          <figcaption>
+            <p class="quote">„nur kurz die pflanze drücken."</p>
+            <div class="row"><b>Lemon</b><span class="tag">gelb · Umarmung</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="green" style="--pos: 50% 50%">
+          <div class="card__imgwrap"><img src="assets/squig-stadtblumen.jpg" alt="Grüner und blauer Squig in Margeriten mit Stadtblick"></div>
+          <figcaption>
+            <p class="quote">„berlin ist heute schön. fast unverschämt."</p>
+            <div class="row"><b>Olli &amp; Berti</b><span class="tag">grün · blau</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--wide" data-color="green" style="--pos: 50% 55%">
+          <div class="card__imgwrap"><img src="assets/squig-schlafsack.jpg" alt="Grüner Squig liegt auf kaputtem Boxsack, blauer Squig schaut"></div>
+          <figcaption>
+            <p class="quote">„boxsack 0, klops 1. publikum lacht trotzdem."</p>
+            <div class="row"><b>Box‑Bande</b><span class="tag">grün · blau</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="pink" style="--pos: 50% 60%">
+          <div class="card__imgwrap"><img src="assets/squig-tulpe.jpg" alt="Rosa Squig in pinker Tulpe"></div>
+          <figcaption>
+            <p class="quote">„mein zimmer. mein reich."</p>
+            <div class="row"><b>Tulpi</b><span class="tag">rosa · Versteck</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-color="pink" style="--pos: 35% 55%">
+          <div class="card__imgwrap"><img src="assets/squig-krake.jpg" alt="Rosa Squig trifft rote Plüsch-Krake"></div>
+          <figcaption>
+            <p class="quote">„du bist… groß. ich bin pippa."</p>
+            <div class="row"><b>Pippa</b><span class="tag">rosa · Bekanntschaft</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="green" style="--pos: 50% 45%">
+          <div class="card__imgwrap"><img src="assets/squig-umarmung.jpg" alt="Grüner Squig umarmt braunen"></div>
+          <figcaption>
+            <p class="quote">„noch 5000 Schritte..."</p>
+            <div class="row"><b>Mossi </b><span class="tag">blau</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-color="green" style="--pos: 50% 35%">
+          <div class="card__imgwrap"><img src="assets/squig-tablett.jpg" alt="Türkiser Squig auf gelbem Tablett am Fenster"></div>
+          <figcaption>
+            <p class="quote">„ich schau einfach kurz raus."</p>
+            <div class="row"><b>Mint</b><span class="tag">türkis · Fenster</span></div>
+          </figcaption>
+        </figure>
+
+        <figure class="card card--tall" data-color="lavender" style="--pos: 50% 55%">
+          <div class="card__imgwrap"><img src="assets/squig-trio-owl.jpg" alt="Trio mit lila Eulchen"></div>
+          <figcaption>
+            <p class="quote">„hu. hu. ich kenn dich."</p>
+            <div class="row"><b>Eulchen &amp; Co.</b><span class="tag">lila · rosa</span></div>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <p class="gallery__note">↑ jeder Squig ist von Hand geformt und ein Unikat. wenn er weg ist, ist er weg.</p>
+    </section>
+
+    <!-- ============ VIDEOS ============ -->
+    <section class="section" id="videos">
+      <div class="section__head">
+        <span class="eyebrow">Stop‑Motion + Szenen</span>
+        <h2 class="section__title">kleine Leben in Bewegung</h2>
+        <p class="section__sub">Winzige Abenteuer, aufgenommen im echten Leben.</p>
+      </div>
+
+      <div class="videos">
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/squig-clip-1.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:08</span>
+          </div>
+          <div class="vcard__body">
+            <h3>Atempause</h3>
+            <p>tief ein. tief aus.</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/squig-clip-2.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:12</span>
+          </div>
+          <div class="vcard__body">
+            <h3>Chill</h3>
+            <p>Das Leben ist schön.</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/squig-clip-3.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:06</span>
+          </div>
+          <div class="vcard__body">
+            <h3>Der Hund muss raus.</h3>
+            <p>Auch wenn keiner so wirklich will.</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/squig-clip-4.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:09</span>
+          </div>
+          <div class="vcard__body">
+            <h3>Frühlingsgefühle</h3>
+            <p>Schaukeln geht immer</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/squig-clip-5.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:11</span>
+          </div>
+          <div class="vcard__body">
+            <h3>Training Day</h3>
+            <p>Geht besser mit Freunden</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/squig-bedtime.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:10</span>
+          </div>
+          <div class="vcard__body">
+            <h3>Gute‑Nacht‑Geschichten</h3>
+            <p>ein leiser Abend</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/clip-cosy.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:07</span>
+          </div>
+          <div class="vcard__body">
+            <h3>kleine Zauberei</h3>
+            <p>funken im dunkeln. sehr ernste sache.</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/clip-roll.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:08</span>
+          </div>
+          <div class="vcard__body">
+            <h3>kullern</h3>
+            <p>so geht das auch.</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/clip-jump.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:06</span>
+          </div>
+          <div class="vcard__body">
+            <h3>K.O. in Runde eins</h3>
+            <p>der boxsack hat aufgegeben. das publikum lacht.</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/clip-walk.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:09</span>
+          </div>
+          <div class="vcard__body">
+            <h3>die Waage ist gemein</h3>
+            <p>klops + 200 g. muss am toast liegen.</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/clip-spin.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:08</span>
+          </div>
+          <div class="vcard__body">
+            <h3>Drehmoment</h3>
+            <p>einmal um sich selbst.</p>
+          </div>
+        </article>
+
+        <article class="vcard">
+          <div class="vcard__media">
+            <video src="assets/clip-hug.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard__dur">0:11</span>
+          </div>
+          <div class="vcard__body">
+            <h3>fest gedrückt</h3>
+            <p>einer braucht's, einer gibt's.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ COMMISSIONS ============ -->
+    <section class="section" id="commissions">
+      <div class="section__head">
+        <span class="eyebrow">mach mir einen</span>
+        <h2 class="section__title">einen Squig bestellen</h2>
+        <p class="section__sub">Erzähl mir, was für ein kleines Wesen in deinem Kopf wohnt. Ich nehme 4 Auftragsarbeiten im Monat – schreib mir deine Idee und ich melde mich innerhalb weniger Tage.</p>
+      </div>
+
+      <form class="form" id="commissionForm" novalidate>
+        <label class="field">
+          <span class="field__label">dein Name</span>
+          <input type="text" name="name" required placeholder="z.B. Juno">
+        </label>
+
+        <label class="field">
+          <span class="field__label">E‑Mail</span>
+          <input type="email" name="email" required placeholder="hallo@beispiel.de">
+        </label>
+
+        <fieldset class="field field--group">
+          <legend class="field__label">Hauptfarbe</legend>
+          <div class="swatches">
+            <label class="swatch-pick"><input type="radio" name="color" value="pink" checked><span style="background:var(--pnk)"></span>rosa</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="lavender"><span style="background:var(--lav)"></span>lavendel</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="yellow"><span style="background:var(--yel)"></span>gelb</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="blue"><span style="background:var(--sky)"></span>blau</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="green"><span style="background:var(--mnt)"></span>grün</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="surprise"><span class="swatch-pick__rainbow"></span>überrasch mich</label>
+          </div>
+          <label class="custom-color">
+            <span class="custom-color__label">Eigene Farbe</span>
+            <input type="text" name="customColor" placeholder="z.B. moosgrün, sonnengelb, oder ein Hex‑Code">
+          </label>
+        </fieldset>
+
+        <fieldset class="field field--group">
+          <legend class="field__label">Größe</legend>
+          <div class="seg">
+            <label><input type="radio" name="size" value="small" checked><span>winzig<small>~3 cm</small></span></label>
+            <label><input type="radio" name="size" value="medium"><span>normal<small>~5 cm</small></span></label>
+            <label><input type="radio" name="size" value="large"><span>pummelig<small>~8 cm</small></span></label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span class="field__label">erzähl mir von ihm</span>
+          <textarea name="story" rows="4" placeholder="Hut? Schirm? mürrisch? verliebt in eine Schnecke? gib mir die Vibes."></textarea>
+        </label>
+
+        <div class="form__row">
+          <div class="form__price">
+            <span class="form__price-amt" id="priceAmt">€38</span>
+            <span class="form__price-note">inkl. Versand in der EU · fertig in 2–3 Wochen</span>
+          </div>
+          <button type="submit" class="btn btn--primary">Wunsch senden ✿</button>
+        </div>
+
+        <div class="form__ok" id="formOk" hidden>
+          <span class="form__ok-blob"></span>
+          <div>
+            <b>angekommen — juhu!</b>
+            <p>Ich melde mich innerhalb von 3 Tagen aus meiner Küche. <br>(schau auch im Spam nach, sicher ist sicher.)</p>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--about" id="about">
+      <div class="about">
+        <span class="eyebrow eyebrow--center">die Welt der Squigs</span>
+        <h2 class="section__title section__title--center">kleine Wesen,<br>von Hand geformt.</h2>
+
+        <div class="about__photo">
+          <img src="assets/squig-birthday.jpg" alt="Drei Squigs in einer kleinen Tasse mit Papiergras">
+          <span class="about__photo-tag">die Bande ✿</span>
+        </div>
+
+        <p class="about__copy">
+          Die Squigs leben überall da, wo Platz ist und jemand sie braucht.
+          Auf Fensterbänken, Schreibtischen, Regalen, Nachttischen.
+          Manchmal auch einfach auf dem Boden, weil der Boden unterschätzt wird.
+        </p>
+        <p class="about__copy">
+          Jeder einzelne wird aus lufttrocknender Knete von Hand geformt,
+          getrocknet und bekommt einen Namen. Sie mögen Regentage, leicht
+          verbrannten Toast und den Mond anschauen. Keiner ist wie der andere
+          – das ist irgendwie der Punkt.
+        </p>
+        <p class="about__copy about__copy--small">
+          Alle paar Wochen kommen neue Squigs dazu. Schau vorbei, oder
+          adoptiere einen, bevor er sich davonschleicht.
+        </p>
+
+        <div class="about__cta">
+          <a class="btn btn--ghost" href="#gallery">die Familie ansehen</a>
+          <a class="btn btn--primary" href="https://instagram.com" target="_blank" rel="noopener">@squigs.world folgen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IMPRESSUM ============ -->
+    <section class="section" id="impressum">
+      <details class="impressum">
+        <summary class="impressum__summary">
+          <span class="impressum__title">Impressum</span>
+          <span class="impressum__chev" aria-hidden="true">▾</span>
+        </summary>
+        <div class="impressum__body">
+          <h3>Angaben gemäß § 5 TMG</h3>
+          <p>
+            Julia Grebe<br>
+            Stahlheimer Str. 26<br>
+            10439 Berlin
+          </p>
+
+          <h3>Kontakt</h3>
+          <p>E‑Mail: <a href="mailto:post@juliagrebe.de">post@juliagrebe.de</a></p>
+
+          <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+          <p>
+            Julia Grebe<br>
+            Stahlheimer Str. 26<br>
+            10439 Berlin
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="foot">
+      <span class="foot__mark">
+        <span class="logo-mark">
+          <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <path fill="var(--yel)" d="M 7 21 C 5 11, 13 4, 22 5 C 31 5, 38 11, 38 21 C 39 30, 33 38, 24 39 C 14 39, 6 33, 7 21 Z" />
+            <path fill="var(--yel-deep)" opacity=".30" d="M 9 26 C 11 35, 19 39, 26 38 C 33 37, 37 32, 38 27 C 35 33, 27 36, 19 35 C 14 34, 11 31, 9 26 Z" />
+            <ellipse cx="16" cy="18.5" rx="6.2" ry="7" fill="#FFFCF3" />
+            <ellipse cx="17" cy="20"   rx="2.6" ry="3.1" fill="#2E2336" />
+            <circle  cx="15.4" cy="18" r="1" fill="#FFFCF3" />
+            <ellipse cx="28" cy="19.5" rx="3.5" ry="4" fill="#FFFCF3" />
+            <ellipse cx="28.4" cy="20.6" rx="1.4" ry="1.8" fill="#2E2336" />
+            <ellipse cx="11" cy="27" rx="2.4" ry="1.6" fill="var(--pnk)" opacity=".55" />
+          </svg>
+        </span>
+      </span>
+      <p>langsam gemacht, mit knetigen Fingern · Berlin · ⓒ 2026 squigs</p>
+      <p class="foot__links">
+        <a href="#gallery">Galerie</a> ·
+        <a href="#commissions">bestellen</a> ·
+        <a href="mailto:hallo@squigs.world">Hallo sagen</a> ·
+        <a href="#impressum">Impressum</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
