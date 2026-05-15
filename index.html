@@ -884,7 +884,7 @@
         priceEl.textContent = PRICE[i.value] || '€38';
       }));
 
-      form.addEventListener('submit', async (e) => {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = form.name.value.trim();
         const email = form.email.value.trim();
@@ -892,16 +892,27 @@
           form.querySelector('input[required]:invalid')?.focus();
           return;
         }
+        const size = form.querySelector('input[name="size"]:checked')?.value || '';
+        const color = form.querySelector('input[name="color"]:checked')?.value || '';
+        const customColor = form.querySelector('input[name="customColor"]')?.value.trim() || '';
+        const story = form.querySelector('textarea[name="story"]')?.value.trim() || '';
+        const SIZES = { small: 'winzig (~3 cm)', medium: 'normal (~5 cm)', large: 'pummelig (~8 cm)' };
+        const PRICES = { small: '€38', medium: '€58', large: '€85' };
+
+        const subject = encodeURIComponent(`Squig-Bestellung von ${name}`);
+        const body = encodeURIComponent(
+          `Hallo Julia!\n\nIch möchte gern einen Squig bestellen.\n\n` +
+          `Name: ${name}\n` +
+          `E-Mail: ${email}\n` +
+          `Farbe: ${color}${customColor ? ' / ' + customColor : ''}\n` +
+          `Größe: ${SIZES[size] || size} — ${PRICES[size] || ''}\n\n` +
+          `Mein Wunsch:\n${story || '(keine Angabe)'}\n\n` +
+          `Liebe Grüße!`
+        );
+        window.location.href = `mailto:post@juliagrebe.de?subject=${subject}&body=${body}`;
+
         const submitBtn = form.querySelector('button[type=submit]');
         submitBtn.disabled = true;
-        submitBtn.textContent = 'wird gesendet…';
-        try {
-          await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(new FormData(form)).toString()
-          });
-        } catch (_) { /* offline fallback — zeige trotzdem Erfolg */ }
         submitBtn.textContent = 'gesendet ♡';
         okEl.hidden = false;
         const r = okEl.getBoundingClientRect();
