@@ -970,22 +970,11 @@ body::before {
   gap: 14px;
   align-items: center;
 }
-.form__ok-blob {
+.form__ok-logo {
   flex: none;
   width: 44px; height: 44px;
-  background: #fff;
-  border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%;
-  position: relative;
+  display: block;
 }
-.form__ok-blob::before, .form__ok-blob::after {
-  content: "";
-  position: absolute; top: 30%;
-  width: 9px; height: 11px;
-  background: var(--ink);
-  border-radius: 50%;
-}
-.form__ok-blob::before { left: 11px; }
-.form__ok-blob::after  { right: 11px; }
 .form__ok b { font-weight: 800; font-size: 16px; display: block; }
 .form__ok p { margin: 4px 0 0; font-size: 13px; color: var(--ink-soft); }
 

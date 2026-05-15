@@ -614,6 +614,19 @@
           <textarea name="story" rows="4" placeholder="Hut? Schirm? mürrisch? verliebt in eine Schnecke? gib mir die Vibes."></textarea>
         </label>
 
+        <label class="field">
+          <span class="field__label">Lieferadresse</span>
+          <textarea name="address" rows="3" placeholder="Name, Straße, PLZ Ort, Land"></textarea>
+        </label>
+
+        <fieldset class="field field--group">
+          <legend class="field__label">Vorab-Foto/Video vor dem Versand?</legend>
+          <div class="seg">
+            <label><input type="radio" name="preview" value="ja" checked><span>Ja, bitte!</span></label>
+            <label><input type="radio" name="preview" value="nein"><span>Überrasch mich!</span></label>
+          </div>
+        </fieldset>
+
         <div class="form__row">
           <div class="form__price">
             <span class="form__price-amt" id="priceAmt">€38</span>
@@ -623,10 +636,22 @@
         </div>
 
         <div class="form__ok" id="formOk" hidden>
-          <span class="form__ok-blob"></span>
+          <span class="form__ok-logo" aria-hidden="true">
+            <svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+              <path fill="var(--lav)" d="M 7 21 C 5 11, 13 4, 22 5 C 31 5, 38 11, 38 21 C 39 30, 33 38, 24 39 C 14 39, 6 33, 7 21 Z"/>
+              <path fill="var(--lav-deep)" opacity=".28" d="M 9 26 C 11 35, 19 39, 26 38 C 33 37, 37 32, 38 27 C 35 33, 27 36, 19 35 C 14 34, 11 31, 9 26 Z"/>
+              <ellipse cx="16" cy="18.5" rx="6.2" ry="7" fill="#FFFCF3"/>
+              <ellipse cx="17" cy="20" rx="2.6" ry="3.1" fill="#2E2336"/>
+              <circle cx="15.4" cy="18" r="1" fill="#FFFCF3"/>
+              <ellipse cx="28" cy="19.5" rx="3.5" ry="4" fill="#FFFCF3"/>
+              <ellipse cx="28.4" cy="20.6" rx="1.4" ry="1.8" fill="#2E2336"/>
+              <ellipse cx="11" cy="27" rx="2.4" ry="1.6" fill="var(--pnk)" opacity=".55"/>
+            </svg>
+          </span>
           <div>
-            <b>angekommen — juhu!</b>
-            <p>Ich melde mich innerhalb von 3 Tagen aus meiner Küche. <br>(schau auch im Spam nach, sicher ist sicher.)</p>
+            <b>E‑Mail wird geöffnet — fast geschafft!</b>
+            <p>Einfach noch auf „Senden" klicken. Ich melde mich innerhalb von 3 Tagen. ✿<br>
+            <small>Bezahlung per PayPal · Versand nach Bezahlung · auf Wunsch gibt es vorher ein Foto oder Video</small></p>
           </div>
         </div>
       </form>
@@ -896,17 +921,26 @@
         const color = form.querySelector('input[name="color"]:checked')?.value || '';
         const customColor = form.querySelector('input[name="customColor"]')?.value.trim() || '';
         const story = form.querySelector('textarea[name="story"]')?.value.trim() || '';
+        const address = form.querySelector('textarea[name="address"]')?.value.trim() || '';
+        const preview = form.querySelector('input[name="preview"]:checked')?.value || '';
         const SIZES = { small: 'winzig (~3 cm)', medium: 'normal (~5 cm)', large: 'pummelig (~8 cm)' };
         const PRICES = { small: '€38', medium: '€58', large: '€85' };
+        const PREVIEW = { ja: 'Ja, bitte — Foto/Video vor dem Versand', nein: 'Überrasch mich!' };
 
         const subject = encodeURIComponent(`Squig-Bestellung von ${name}`);
         const body = encodeURIComponent(
           `Hallo Julia!\n\nIch möchte gern einen Squig bestellen.\n\n` +
+          `── Bestellung ──────────────────────\n` +
           `Name: ${name}\n` +
           `E-Mail: ${email}\n` +
           `Farbe: ${color}${customColor ? ' / ' + customColor : ''}\n` +
           `Größe: ${SIZES[size] || size} — ${PRICES[size] || ''}\n\n` +
           `Mein Wunsch:\n${story || '(keine Angabe)'}\n\n` +
+          `── Lieferung ───────────────────────\n` +
+          `Lieferadresse:\n${address || '(bitte noch eintragen)'}\n\n` +
+          `Vorab-Foto/Video: ${PREVIEW[preview] || preview}\n\n` +
+          `── Hinweis ─────────────────────────\n` +
+          `Bezahlung per PayPal · Versand erfolgt nach Bezahlung.\n\n` +
           `Liebe Grüße!`
         );
         window.location.href = `mailto:post@juliagrebe.de?subject=${subject}&body=${body}`;
