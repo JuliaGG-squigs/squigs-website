@@ -610,6 +610,85 @@
 
   </div>
 
+  <!-- ============ TWEAKS PANEL ============ -->
+  <aside class="tweaks" id="tweaksPanel" aria-label="Tweaks">
+    <div class="tweaks__head">
+      <div class="tweaks__title">Tweaks <small>einstellen</small></div>
+      <button class="tweaks__close" id="tweaksClose" aria-label="schließen">×</button>
+    </div>
+    <div class="tweaks__body">
+
+      <div class="tweak-group">
+        <div class="tweak-group__label">Stimmung</div>
+        <div class="moods" id="moodGrid">
+          <button class="mood" data-mood="fruehling">
+            <span class="mood__swatches">
+              <span style="background:#D8C7E6"></span>
+              <span style="background:#F6CFD2"></span>
+              <span style="background:#F6E29A"></span>
+              <span style="background:#C8E2D0"></span>
+            </span>
+            <span class="mood__name">Frühlingstraum</span>
+          </button>
+          <button class="mood" data-mood="abend">
+            <span class="mood__swatches">
+              <span style="background:#9F82BE"></span>
+              <span style="background:#CDB6E0"></span>
+              <span style="background:#ECBDD0"></span>
+              <span style="background:#F1D6B0"></span>
+            </span>
+            <span class="mood__name">Abendlavendel</span>
+          </button>
+          <button class="mood" data-mood="sonne">
+            <span class="mood__swatches">
+              <span style="background:#F6D875"></span>
+              <span style="background:#F5BFAB"></span>
+              <span style="background:#E8C7B6"></span>
+              <span style="background:#D6D89A"></span>
+            </span>
+            <span class="mood__name">Sonnenküche</span>
+          </button>
+          <button class="mood" data-mood="nebel">
+            <span class="mood__swatches">
+              <span style="background:#B2D3C3"></span>
+              <span style="background:#ACC2D5"></span>
+              <span style="background:#BFC9D8"></span>
+              <span style="background:#DAE0AE"></span>
+            </span>
+            <span class="mood__name">Morgennebel</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="tweak-group">
+        <div class="tweak-group__label">Knetfaktor</div>
+        <input type="range" id="wobble" class="tweak-slider" min="0" max="6" step="0.5" value="2">
+        <div class="slider-scale">
+          <span>brav</span>
+          <span>knetig</span>
+        </div>
+      </div>
+
+      <div class="tweak-group">
+        <div class="tweak-group__label">Bewegung</div>
+        <div class="tweak-seg" id="livelySeg">
+          <button data-lively="false">ruhig</button>
+          <button data-lively="true" class="is-active">lebendig</button>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <script>
+    /* persisted defaults — host rewrites this block when keys change */
+    window.__SQUIGS_TWEAKS__ = /*EDITMODE-BEGIN*/{
+      "mood": "sonne",
+      "wobble": 2,
+      "lively": true
+    }/*EDITMODE-END*/;
+  </script>
+  <script src="tweaks.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

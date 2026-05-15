@@ -4,25 +4,31 @@
    ========================================================= */
 
 :root {
-  /* surfaces — Sonnenküche palette baked in as the permanent look */
-  --bg:        #FCEFD6;
-  --bg-warm:   #F8E2B6;
-  --paper:    #FFF8E8;
+  /* surfaces — warm cream, real presence */
+  --bg:        #FBF5EA;
+  --bg-warm:   #F5EAD3;
+  --paper:    #FFFCF3;
   --paper-2:  #FBF1DC;
 
   /* ink */
-  --ink:       #2E2336;
+  --ink:       #2E2336;   /* deeper aubergine */
   --ink-soft:  #5E5168;
   --ink-mute:  #8C8194;
 
-  /* accents — Sonnenküche */
-  --lav:       #C97B5C;   --lav-deep: #A55735;
-  --yel:       #F3B922;   --yel-deep: #C99007;
-  --pnk:       #EE7253;   --pnk-deep: #C44E2F;
-  --mnt:       #B6B046;   --mnt-deep: #8C8722;
-  --sky:       #E89A4F;   --sky-deep: #BC7228;
+  /* accents — saturated, squig-figure inspired (Frühlingstraum default) */
+  --lav:       #8E6FC9;   /* royal purple — like birthday squigs */
+  --lav-deep:  #6B4AAF;
+  --yel:       #F0BE3C;   /* rich warm golden yellow */
+  --yel-deep:  #D49B17;
+  --pnk:       #ED7E8E;   /* strong coral pink — like Pippy */
+  --pnk-deep:  #D34F62;
+  --mnt:       #7FAA76;   /* earthy grass green — like windowsill squig */
+  --mnt-deep:  #5E8855;
+  --sky:       #5A9CD8;   /* saturated true blue — like Boop */
+  --sky-deep:  #3478B7;
 
-  --wobble:    2;          /* baked-in Knetfaktor */
+  /* tweakables */
+  --wobble:    0;          /* unitless 0..6; multiplied by 1deg or 1px in use */
   --hop-dur:   3.6s;
   --marquee-dur: 28s;
 
@@ -41,6 +47,48 @@
   --pad:    20px;
   --pad-l:  28px;
   --maxw:   480px;
+}
+
+/* ===== MOOD PRESETS — all bolder ===== */
+html[data-mood="abend"] {
+  --bg:       #F3ECF6;
+  --bg-warm:  #E8DCEF;
+  --paper:    #FBF6FE;
+  --lav:      #7048B9;   --lav-deep: #4E2C92;
+  --yel:      #E59A4D;   --yel-deep: #BD7421;
+  --pnk:      #D86089;   --pnk-deep: #B23E66;
+  --mnt:      #6B8E92;   --mnt-deep: #4D6E72;
+  --sky:      #5680C5;   --sky-deep: #2E5896;
+}
+html[data-mood="sonne"] {
+  --bg:       #FCEFD6;
+  --bg-warm:  #F8E2B6;
+  --paper:    #FFF8E8;
+  --lav:      #C97B5C;   --lav-deep: #A55735;
+  --yel:      #F3B922;   --yel-deep: #C99007;
+  --pnk:      #EE7253;   --pnk-deep: #C44E2F;
+  --mnt:      #B6B046;   --mnt-deep: #8C8722;
+  --sky:      #E89A4F;   --sky-deep: #BC7228;
+}
+html[data-mood="nebel"] {
+  --bg:       #EAF1ED;
+  --bg-warm:  #D5E4DC;
+  --paper:    #F4FAF7;
+  --lav:      #6C7FA0;   --lav-deep: #46587A;
+  --yel:      #AABE5A;   --yel-deep: #7F9335;
+  --pnk:      #C4848A;   --pnk-deep: #985E63;
+  --mnt:      #4F9E7C;   --mnt-deep: #2E7558;
+  --sky:      #3F86C0;   --sky-deep: #20619A;
+}
+html[data-mood="marzipan"] {
+  --bg:       #FBEAE3;
+  --bg-warm:  #F7D6C8;
+  --paper:    #FFF4ED;
+  --lav:      #C7679A;   --lav-deep: #9C3F73;
+  --yel:      #EBB055;   --yel-deep: #C18722;
+  --pnk:      #E25F62;   --pnk-deep: #B83A3D;
+  --mnt:      #CBAA62;   --mnt-deep: #9E8136;
+  --sky:      #D67E76;   --sky-deep: #AB5450;
 }
 
 * { box-sizing: border-box; }
@@ -1129,5 +1177,193 @@ body::before {
     999px / 999px;
 }
 
-.marquee__track  { animation-duration: var(--marquee-dur); }
+/* Animation: lively (default) vs calm */
+html[data-lively="false"] .hero__doodle--star,
+html[data-lively="false"] .marquee__track {
+  animation-play-state: paused;
+}
+html[data-lively="true"] .marquee__track  { animation-duration: var(--marquee-dur); }
+
+/* =========================================================
+   TWEAKS PANEL
+   ========================================================= */
+.tweaks {
+  position: fixed;
+  right: 16px; bottom: 16px;
+  width: min(320px, calc(100vw - 32px));
+  max-height: min(640px, calc(100vh - 32px));
+  background: var(--paper);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(61,53,72,.22), 0 4px 0 rgba(61,53,72,.05);
+  z-index: 200;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+}
+.tweaks.is-open { display: flex; }
+
+.tweaks__head {
+  display: flex; align-items: center;
+  padding: 14px 14px 12px 18px;
+  border-bottom: 1.5px dashed rgba(184,159,208,.4);
+  background: linear-gradient(180deg, rgba(216,199,230,.18), transparent);
+}
+.tweaks__title {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+.tweaks__title small {
+  display: block;
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--lav-deep);
+  margin-top: -2px;
+  letter-spacing: 0;
+}
+.tweaks__close {
+  margin-left: auto;
+  width: 32px; height: 32px;
+  border: none;
+  background: var(--bg);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--ink-soft);
+  line-height: 1;
+}
+.tweaks__close:hover { background: var(--pnk); color: var(--ink); }
+
+.tweaks__body {
+  padding: 16px 18px 20px;
+  display: grid;
+  gap: 18px;
+  overflow-y: auto;
+}
+
+.tweak-group__label {
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--ink);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.tweak-group__label span {
+  font-family: 'Caveat', cursive;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 16px;
+  color: var(--ink-mute);
+  font-weight: 700;
+}
+
+/* Mood preset cards */
+.moods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.mood {
+  background: var(--bg);
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  padding: 8px 10px 10px;
+  cursor: pointer;
+  display: grid;
+  gap: 8px;
+  text-align: left;
+  font-family: inherit;
+  transition: transform .15s, border-color .15s, background .15s;
+}
+.mood:hover { transform: translateY(-1px); }
+.mood.is-active {
+  border-color: var(--ink);
+  background: #fff;
+}
+.mood__swatches {
+  display: flex;
+  gap: 0;
+  height: 22px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+.mood__swatches span { flex: 1; }
+.mood__name {
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--ink);
+  letter-spacing: -0.1px;
+}
+
+/* Slider */
+.tweak-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--bg);
+  border-radius: 999px;
+  outline: none;
+  margin: 6px 0 2px;
+}
+.tweak-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px; height: 22px;
+  background: var(--ink);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(61,53,72,.3);
+  border: 3px solid var(--paper);
+}
+.tweak-slider::-moz-range-thumb {
+  width: 22px; height: 22px;
+  background: var(--ink);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid var(--paper);
+}
+.slider-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--ink-mute);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* Segmented toggle */
+.tweak-seg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: var(--bg);
+  padding: 4px;
+  border-radius: 14px;
+}
+.tweak-seg button {
+  border: none;
+  background: transparent;
+  padding: 9px 8px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.tweak-seg button.is-active {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* Floating launcher (when panel closed and edit mode hasn't been triggered yet) */
+/* (kept invisible — toolbar provides the toggle) */
 
