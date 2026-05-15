@@ -235,6 +235,13 @@ body::before {
   backdrop-filter: blur(8px);
   text-transform: uppercase;
   z-index: 4;
+  border: none;
+  cursor: pointer;
+  transition: background .2s ease, transform .15s ease;
+}
+.hero__loop-tag:hover {
+  background: rgba(20,16,28,.80);
+  transform: scale(1.05);
 }
 
 .hero__sticker {

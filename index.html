@@ -58,7 +58,7 @@
                src="assets/hero.mp4"
                autoplay muted loop playsinline
                aria-hidden="true"></video>
-        <span class="hero__loop-tag">▸ läuft</span>
+        <button class="hero__loop-tag" id="heroLoopBtn" aria-label="Video pausieren">▸ läuft</button>
         <div class="hero__sticker hero__sticker--1">handgemacht</div>
         <div class="hero__sticker hero__sticker--2">Unikat</div>
         <span class="hero__doodle hero__doodle--star" aria-hidden="true">✦</span>
@@ -1027,6 +1027,24 @@
     })();
 
     // ============ NAV smooth scroll ============
+    // ============ HERO VIDEO TOGGLE ============
+    (() => {
+      const btn = document.getElementById('heroLoopBtn');
+      const vid = document.querySelector('.hero__video');
+      if (!btn || !vid) return;
+      btn.addEventListener('click', () => {
+        if (vid.paused) {
+          vid.play();
+          btn.textContent = '▸ läuft';
+          btn.setAttribute('aria-label', 'Video pausieren');
+        } else {
+          vid.pause();
+          btn.textContent = '⏸ pausiert';
+          btn.setAttribute('aria-label', 'Video abspielen');
+        }
+      });
+    })();
+
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href').slice(1);
