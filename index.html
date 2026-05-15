@@ -629,7 +629,7 @@
 
         <div class="form__row">
           <div class="form__price">
-            <span class="form__price-amt" id="priceAmt">€38</span>
+            <span class="form__price-amt" id="priceAmt">€29</span>
             <span class="form__price-note">inkl. Versand in der EU · fertig in 2–3 Wochen</span>
           </div>
           <button type="submit" class="btn btn--primary">Wunsch senden ✿</button>
@@ -904,7 +904,7 @@
       const priceEl = document.getElementById('priceAmt');
       const okEl = document.getElementById('formOk');
 
-      const PRICE = { small: '€38', medium: '€58', large: '€85' };
+      const PRICE = { small: '€29', medium: '€45', large: '€69' };
       sizeInputs.forEach(i => i.addEventListener('change', () => {
         priceEl.textContent = PRICE[i.value] || '€38';
       }));
@@ -924,7 +924,7 @@
         const address = form.querySelector('textarea[name="address"]')?.value.trim() || '';
         const preview = form.querySelector('input[name="preview"]:checked')?.value || '';
         const SIZES = { small: 'winzig (~3 cm)', medium: 'normal (~5 cm)', large: 'pummelig (~8 cm)' };
-        const PRICES = { small: '€38', medium: '€58', large: '€85' };
+        const PRICES = { small: '€29', medium: '€45', large: '€69' };
         const PREVIEW = { ja: 'Ja, bitte — Foto/Video vor dem Versand', nein: 'Überrasch mich!' };
 
         const subject = encodeURIComponent(`Squig-Bestellung von ${name}`);
