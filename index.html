@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Caveat:wght@500;700&display=swap">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles-v2.css">
 </head>
 <body>
   <div class="page" data-screen-label="Squigs Homepage">
@@ -17,29 +18,23 @@
       <a class="nav__logo" href="#top" aria-label="Squigs Startseite">
         <span class="logo-mark" aria-hidden="true">
           <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-            <!-- handmade-clay blob: irregular, chunky, slightly tilted left -->
             <path fill="var(--lav)" d="
               M 7 21
               C 5 11, 13 4, 22 5
               C 31 5, 38 11, 38 21
               C 39 30, 33 38, 24 39
               C 14 39, 6 33, 7 21 Z" />
-            <!-- subtle bottom shading lump for clay feel -->
             <path fill="var(--lav-deep)" opacity=".28" d="
               M 9 26
               C 11 35, 19 39, 26 38
               C 33 37, 37 32, 38 27
               C 35 33, 27 36, 19 35
               C 14 34, 11 31, 9 26 Z" />
-            <!-- LEFT eye — clearly bigger (the signature) -->
             <ellipse cx="16" cy="18.5" rx="6.2" ry="7" fill="#FFFCF3" />
             <ellipse cx="17" cy="20"   rx="2.6" ry="3.1" fill="#2E2336" />
-            <!-- highlight glint -->
             <circle  cx="15.4" cy="18" r="1" fill="#FFFCF3" />
-            <!-- RIGHT eye — clearly smaller, set a bit higher & inward -->
             <ellipse cx="28" cy="19.5" rx="3.5" ry="4" fill="#FFFCF3" />
             <ellipse cx="28.4" cy="20.6" rx="1.4" ry="1.8" fill="#2E2336" />
-            <!-- tiny coral cheek for warmth (sits on the larger eye side) -->
             <ellipse cx="11" cy="27" rx="2.4" ry="1.6" fill="var(--pnk)" opacity=".55" />
           </svg>
         </span>
@@ -109,12 +104,12 @@
       </div>
     </div>
 
-    <!-- ============ GALLERY ============ -->
+    <!-- ============ GALLERY V2 ============ -->
     <section class="section" id="gallery">
       <div class="section__head">
         <span class="eyebrow">die Familie</span>
         <h2 class="section__title">lerne die Squigs kennen</h2>
-        <p class="section__sub">Eine wachsende Schar von Knet‑Wesen. Tipp auf eine Farbe, um deinen Liebling zu finden.</p>
+        <p class="section__sub section__sub--wide">Eine wachsende Schar von Knet‑Wesen. Tipp auf eine Farbe, um deinen Liebling zu finden – oder klicke auf ein Bild, um es groß zu sehen.</p>
       </div>
 
       <div class="filters" role="tablist" aria-label="nach Farbe filtern">
@@ -132,321 +127,441 @@
         <button class="chip" data-filter="brown"><span class="chip__swatch" style="--c:#9B6B4F"></span> braun <span class="chip__count" data-count="brown"></span></button>
       </div>
 
-      <div class="gallery" id="galleryGrid">
+      <!-- Masonry magazine cards: full image, full caption -->
+      <div class="gallery2" id="galleryGrid">
 
-        <figure class="card card--wide" data-color="all" style="--pos: 50% 50%">
-          <div class="card__imgwrap"><img src="assets/squig-family-lineup.jpg" alt="Die ganze Squig-Familie"></div>
+        <figure class="card2" data-color="all">
+          <div class="card2__media"><img src="assets/squig-family-lineup.jpg" alt="Die ganze Squig-Familie"></div>
           <figcaption>
             <p class="quote">„heute alle da. fast alle."</p>
             <div class="row"><b>Die ganze Familie</b><span class="tag">Klassenfoto</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="red" style="--pos: 55% 60%">
-          <div class="card__imgwrap"><img src="assets/squig-umbrella.jpg" alt="Norbert mit Schirm"></div>
+        <figure class="card2" data-color="red">
+          <div class="card2__media"><img src="assets/squig-umbrella.jpg" alt="Norbert mit Schirm"></div>
           <figcaption>
             <p class="quote">„regen ist nur glas, das fällt."</p>
             <div class="row"><b>Norbert</b><span class="tag">rot · Schirm</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card" data-color="pink" style="--pos: 50% 75%">
-          <div class="card__imgwrap"><img src="assets/squig-pink-blue.jpg" alt="Pim und Boop"></div>
+        <figure class="card2" data-color="pink">
+          <div class="card2__media"><img src="assets/squig-pink-blue.jpg" alt="Pim und Boop"></div>
           <figcaption>
             <p class="quote">„pst — schon gehört?"</p>
             <div class="row"><b>Pim &amp; Boop</b><span class="tag">rosa · blau</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card" data-color="green" style="--pos: 50% 70%">
-          <div class="card__imgwrap"><img src="assets/squig-trio-window.jpg" alt="Das Fensterbank-Trio"></div>
+        <figure class="card2" data-color="green">
+          <div class="card2__media"><img src="assets/squig-trio-window.jpg" alt="Das Fensterbank-Trio"></div>
           <figcaption>
             <p class="quote">„einer rennt. einer schreit. einer fragt sich, warum."</p>
             <div class="row"><b>Fensterbank‑Trio</b><span class="tag">grün · blau</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="lavender" style="--pos: 55% 60%">
-          <div class="card__imgwrap"><img src="assets/squig-birthday.jpg" alt="Geburtstags-Bande in der Tasse"></div>
+        <figure class="card2" data-color="lavender">
+          <div class="card2__media"><img src="assets/squig-birthday.jpg" alt="Geburtstags-Bande in der Tasse"></div>
           <figcaption>
             <p class="quote">„kuchen? jetzt? sehr gerne."</p>
             <div class="row"><b>Geburtstags‑Bande</b><span class="tag">lila · blau</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="blue" style="--pos: 50% 35%">
-          <div class="card__imgwrap"><img src="assets/squig-dog-walk.jpg" alt="Squig führt Hund die Treppe runter"></div>
+        <figure class="card2" data-color="blue">
+          <div class="card2__media"><img src="assets/squig-dog-walk.jpg" alt="Hellblauer Squig führt einen winzigen braunen Hund an pinker Leine über Holzboden"></div>
           <figcaption>
             <p class="quote">„der hund muss raus. auch wenn keiner so wirklich will."</p>
             <div class="row"><b>Mo &amp; sein Hund</b><span class="tag">blau · Spaziergang</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card" data-color="green" style="--pos: 50% 30%">
-          <div class="card__imgwrap"><img src="assets/squig-treadmill.jpg" alt="Squig auf dem Laufband"></div>
+        <figure class="card2" data-color="green">
+          <div class="card2__media"><img src="assets/squig-umarmung.jpg" alt="Türkiser Squig mit pinkem Stirnband auf dem Laufband"></div>
           <figcaption>
             <p class="quote">„heute schon 0,0 km. starker tag."</p>
             <div class="row"><b>Sporty</b><span class="tag">türkis · Cardio</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="green" style="--pos: 50% 45%">
-          <div class="card__imgwrap"><img src="assets/squig-scale.jpg" alt="Grüner Squig auf der Waage, erschrocken"></div>
+        <figure class="card2" data-color="green">
+          <div class="card2__media"><img src="assets/squig-scale.jpg" alt="Grüner Squig auf der Waage, erschrocken"></div>
           <figcaption>
             <p class="quote">„das war doch der toast schuld."</p>
             <div class="row"><b>Klops</b><span class="tag">grün · Waage</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="yellow" style="--pos: 50% 55%">
-          <div class="card__imgwrap"><img src="assets/squig-sunflower.jpg" alt="Gelber Squig klettert an Sonnenblume"></div>
+        <figure class="card2" data-color="yellow">
+          <div class="card2__media"><img src="assets/squig-sunflower.jpg" alt="Gelber Squig klettert an Sonnenblume"></div>
           <figcaption>
             <p class="quote">„ich wachse mit."</p>
             <div class="row"><b>Sonny</b><span class="tag">gelb · Kletterer</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card" data-color="yellow" style="--pos: 60% 45%">
-          <div class="card__imgwrap"><img src="assets/squig-yellow-plant.jpg" alt="Gelber Squig umarmt Pflanzenstamm"></div>
+        <figure class="card2" data-color="green">
+          <div class="card2__media"><img src="assets/squig-yellow-plant.jpg" alt="Türkiser Squig sitzt in Zinktopf mit Blume"></div>
           <figcaption>
             <p class="quote">„nur kurz die pflanze drücken."</p>
-            <div class="row"><b>Lemon</b><span class="tag">gelb · Umarmung</span></div>
+            <div class="row"><b>Topfi</b><span class="tag">türkis · Topf</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="green" style="--pos: 50% 50%">
-          <div class="card__imgwrap"><img src="assets/squig-stadtblumen.jpg" alt="Grüner und blauer Squig in Margeriten mit Stadtblick"></div>
+        <figure class="card2" data-color="green">
+          <div class="card2__media"><img src="assets/squig-stadtblumen.jpg" alt="Grüner Squig sitzt huckepack auf blauem Squig auf goldenem Tablett am Fenster"></div>
           <figcaption>
             <p class="quote">„berlin ist heute schön. fast unverschämt."</p>
             <div class="row"><b>Olli &amp; Berti</b><span class="tag">grün · blau</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--wide" data-color="green" style="--pos: 50% 55%">
-          <div class="card__imgwrap"><img src="assets/squig-schlafsack.jpg" alt="Grüner Squig liegt auf kaputtem Boxsack, blauer Squig schaut"></div>
+        <figure class="card2" data-color="green">
+          <div class="card2__media"><img src="assets/squig-schlafsack.jpg" alt="Türkiser Squig mit Boxhandschuhen, kaputter Boxsack daneben, blauer Squig schaut"></div>
           <figcaption>
             <p class="quote">„boxsack 0, klops 1. publikum lacht trotzdem."</p>
-            <div class="row"><b>Box‑Bande</b><span class="tag">grün · blau</span></div>
+            <div class="row"><b>Box‑Bande</b><span class="tag">türkis · blau</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="pink" style="--pos: 50% 60%">
-          <div class="card__imgwrap"><img src="assets/squig-tulpe.jpg" alt="Rosa Squig in pinker Tulpe"></div>
+        <figure class="card2" data-color="pink">
+          <div class="card2__media"><img src="assets/squig-tulpe.jpg" alt="Rosa Squig in pinker Tulpe"></div>
           <figcaption>
             <p class="quote">„mein zimmer. mein reich."</p>
             <div class="row"><b>Tulpi</b><span class="tag">rosa · Versteck</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card" data-color="pink" style="--pos: 35% 55%">
-          <div class="card__imgwrap"><img src="assets/squig-krake.jpg" alt="Rosa Squig trifft rote Plüsch-Krake"></div>
+        <figure class="card2" data-color="pink">
+          <div class="card2__media"><img src="assets/squig-krake.jpg" alt="Rosa Squig trifft rote Plüsch-Krake"></div>
           <figcaption>
             <p class="quote">„du bist… groß. ich bin pippa."</p>
             <div class="row"><b>Pippa</b><span class="tag">rosa · Bekanntschaft</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="green" style="--pos: 50% 45%">
-          <div class="card__imgwrap"><img src="assets/squig-umarmung.jpg" alt="Grüner Squig umarmt braunen"></div>
+        <figure class="card2" data-color="lavender">
+          <div class="card2__media"><img src="assets/squig-treadmill.jpg" alt="Lila Mini-Squig mit acht Beinen auf Holzboden"></div>
           <figcaption>
-            <p class="quote">„noch 5000 Schritte..."</p>
-            <div class="row"><b>Mossi </b><span class="tag">blau</span></div>
+            <p class="quote">„acht beine. acht meinungen."</p>
+            <div class="row"><b>Achti</b><span class="tag">lila · vielfüßig</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card" data-color="green" style="--pos: 50% 35%">
-          <div class="card__imgwrap"><img src="assets/squig-tablett.jpg" alt="Türkiser Squig auf gelbem Tablett am Fenster"></div>
+        <figure class="card2" data-color="green">
+          <div class="card2__media"><img src="assets/squig-tablett.jpg" alt="Türkiser Squig auf gelbem Tablett am Fenster"></div>
           <figcaption>
             <p class="quote">„ich schau einfach kurz raus."</p>
             <div class="row"><b>Mint</b><span class="tag">türkis · Fenster</span></div>
           </figcaption>
         </figure>
 
-        <figure class="card card--tall" data-color="lavender" style="--pos: 50% 55%">
-          <div class="card__imgwrap"><img src="assets/squig-trio-owl.jpg" alt="Trio mit lila Eulchen"></div>
+        <figure class="card2" data-color="lavender">
+          <div class="card2__media"><img src="assets/squig-trio-owl.jpg" alt="Hellblauer und lila Squig neben kleinem lila Eulchen auf orangem Lautsprecher"></div>
           <figcaption>
             <p class="quote">„hu. hu. ich kenn dich."</p>
-            <div class="row"><b>Eulchen &amp; Co.</b><span class="tag">lila · rosa</span></div>
+            <div class="row"><b>Eulchen &amp; Co.</b><span class="tag">lila · blau</span></div>
           </figcaption>
         </figure>
 
       </div>
 
-      <p class="gallery__note">↑ jeder Squig ist von Hand geformt und ein Unikat. wenn er weg ist, ist er weg.</p>
+      <!-- Thumbnail strip: the rest of the family, click to enlarge -->
+      <div class="more-head">
+        <h3>noch mehr Squigs</h3>
+        <span class="hint">tipp auf einen, dann wird er groß ✦</span>
+      </div>
+
+      <div class="thumbs" id="thumbStrip">
+        <button class="thumb" data-color="green" data-name="Im Beet" data-tag="türkis · Trichter" data-src="assets/squig-buero.jpg">
+          <img src="assets/squig-buero.jpg" alt="Türkiser Squig mit rosa Trichter zwischen Sämlingen">
+        </button>
+        <button class="thumb" data-color="blue" data-name="Stern pflücken" data-tag="blau · Engel" data-src="assets/squig-angel.jpg">
+          <img src="assets/squig-angel.jpg" alt="Blauer Squig mit Ananas neben Keramik-Engel">
+        </button>
+        <button class="thumb" data-color="lavender" data-name="Lila Pärchen" data-tag="lila · blau" data-src="assets/squig-blue-purple-pair.jpg">
+          <img src="assets/squig-blue-purple-pair.jpg" alt="Hellblauer und lila Squig auf orangem Lautsprecher">
+        </button>
+        <button class="thumb" data-color="grey" data-name="In der Süßigkeitenschale" data-tag="grau · Schoki" data-src="assets/squig-donut-bowl.jpg">
+          <img src="assets/squig-donut-bowl.jpg" alt="Grauer Squig mit rosa Donut in Schale voller Pralinen">
+        </button>
+        <button class="thumb" data-color="grey" data-name="Donutti" data-tag="grau · Donut" data-src="assets/squig-donut.png">
+          <img src="assets/squig-donut.png" alt="Grauer Squig hält einen rosa Donut in den Armen">
+        </button>
+        <button class="thumb" data-color="all" data-name="auf der Dose" data-tag="Versammlung" data-src="assets/squig-group-stump.jpg">
+          <img src="assets/squig-group-stump.jpg" alt="Sechs Squigs und Tiere auf einer Enjoy-Dose">
+        </button>
+        <button class="thumb" data-color="orange" data-name="Blumenfreund" data-tag="orange · Blume" data-src="assets/squig-kleiner-prinz.jpg">
+          <img src="assets/squig-kleiner-prinz.jpg" alt="Oranger Squig umarmt gelben Blumenstängel">
+        </button>
+        <button class="thumb" data-color="orange" data-name="Orange ♡ Grün" data-tag="orange · grün" data-src="assets/squig-orange-green-hug.jpg">
+          <img src="assets/squig-orange-green-hug.jpg" alt="Oranger und grüner Squig umarmen sich">
+        </button>
+        <button class="thumb" data-color="grey" data-name="Drei Dunkle" data-tag="grau · blau · lila" data-src="assets/squig-plant-snail.jpg">
+          <img src="assets/squig-plant-snail.jpg" alt="Schwarzer, blauer und lila Squig nebeneinander">
+        </button>
+        <button class="thumb" data-color="green" data-name="Beet-Begegnung" data-tag="türkis · rosa" data-src="assets/squig-pot-pair.jpg">
+          <img src="assets/squig-pot-pair.jpg" alt="Türkiser Squig lehnt sich an rosa Schneckchen im Pflanzentopf">
+        </button>
+        <button class="thumb" data-color="blue" data-name="Andacht" data-tag="blau · andächtig" data-src="assets/squig-praying.jpg">
+          <img src="assets/squig-praying.jpg" alt="Hellblauer Squig mit gefalteten Händen, schaut nach oben">
+        </button>
+        <button class="thumb" data-color="brown" data-name="Schnecke solo" data-tag="weiß · braun" data-src="assets/squig-snail-solo.jpg">
+          <img src="assets/squig-snail-solo.jpg" alt="Weiße Schnecke mit braunem Haus, allein auf Holz">
+        </button>
+        <button class="thumb" data-color="green" data-name="Schildkrötentreffen" data-tag="grün · gestrickt" data-src="assets/squig-snail.jpg">
+          <img src="assets/squig-snail.jpg" alt="Knet-Schildkröte trifft gehäkelte Schildkröte">
+        </button>
+        <button class="thumb" data-color="blue" data-name="Auf der Treppe" data-tag="blau · Hund" data-src="assets/squig-stairs.jpg">
+          <img src="assets/squig-stairs.jpg" alt="Hellblauer Squig mit Hund auf alter Treppenstufe">
+        </button>
+        <button class="thumb" data-color="yellow" data-name="Gelb‑Weiß Umarmung" data-tag="gelb · weiß" data-src="assets/squig-white-yellow-hug.jpg">
+          <img src="assets/squig-white-yellow-hug.jpg" alt="Gelber und weißer Squig umarmen sich fest">
+        </button>
+        <button class="thumb" data-color="lavender" data-name="Aus dem Fenster" data-tag="lila · blau · grau" data-src="assets/squig-window-back.jpg">
+          <img src="assets/squig-window-back.jpg" alt="Drei Squigs Arm in Arm schauen aus dem Fenster">
+        </button>
+        <button class="thumb" data-color="yellow" data-name="Schlittenfahrt" data-tag="gelb · Schlitten" data-src="assets/squig-yellow-sled.jpg">
+          <img src="assets/squig-yellow-sled.jpg" alt="Gelber Squig liegt entspannt auf Holzschlitten">
+        </button>
+        <button class="thumb" data-color="blue" data-name="Mo & Dackel" data-tag="blau · Hund" data-src="assets/squig-dog-yellow.jpg">
+          <img src="assets/squig-dog-yellow.jpg" alt="Hellblauer Squig mit Dackel an pinker Leine">
+        </button>
+        <button class="thumb" data-color="lavender" data-name="Adress-Frage" data-tag="lila · braun" data-src="assets/squig-adresse.jpg">
+          <img src="assets/squig-adresse.jpg" alt="Zwei Squigs halten Zettel mit Frage nach Adresse">
+        </button>
+      </div>
+
+      <p class="gallery2-note">↑ jeder Squig ist von Hand geformt und ein Unikat. wenn er weg ist, ist er weg.</p>
     </section>
 
-    <!-- ============ VIDEOS ============ -->
+    <!-- ============ VIDEOS V2 ============ -->
     <section class="section" id="videos">
       <div class="section__head">
         <span class="eyebrow">Stop‑Motion + Szenen</span>
         <h2 class="section__title">kleine Leben in Bewegung</h2>
-        <p class="section__sub">Winzige Abenteuer, aufgenommen im echten Leben.</p>
+        <p class="section__sub section__sub--wide">Winzige Abenteuer, aufgenommen im echten Leben. Tipp auf ▸ zum Abspielen, oder oben links auf das Symbol für Vollbild.</p>
       </div>
 
-      <div class="videos">
-        <article class="vcard">
-          <div class="vcard__media">
+      <div class="videos2">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/squig-clip-1.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:08</span>
+            <span class="vcard2__dur">0:08</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>Atempause</h3>
             <p>tief ein. tief aus.</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/squig-clip-2.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:12</span>
+            <span class="vcard2__dur">0:12</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>Chill</h3>
             <p>Das Leben ist schön.</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/squig-clip-3.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:06</span>
+            <span class="vcard2__dur">0:06</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>Der Hund muss raus.</h3>
             <p>Auch wenn keiner so wirklich will.</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/squig-clip-4.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:09</span>
+            <span class="vcard2__dur">0:09</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>Frühlingsgefühle</h3>
             <p>Schaukeln geht immer</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/squig-clip-5.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:11</span>
+            <span class="vcard2__dur">0:11</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>Training Day</h3>
             <p>Geht besser mit Freunden</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/squig-bedtime.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:10</span>
+            <span class="vcard2__dur">0:10</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>Gute‑Nacht‑Geschichten</h3>
             <p>ein leiser Abend</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/clip-cosy.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:07</span>
+            <span class="vcard2__dur">0:07</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>kleine Zauberei</h3>
             <p>funken im dunkeln. sehr ernste sache.</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/clip-roll.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:08</span>
+            <span class="vcard2__dur">0:08</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>kullern</h3>
             <p>so geht das auch.</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/clip-jump.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:06</span>
+            <span class="vcard2__dur">0:06</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>K.O. in Runde eins</h3>
             <p>der boxsack hat aufgegeben. das publikum lacht.</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/clip-walk.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:09</span>
+            <span class="vcard2__dur">0:09</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>die Waage ist gemein</h3>
             <p>klops + 200 g. muss am toast liegen.</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
+        <article class="vcard2">
+          <div class="vcard2__media">
             <video src="assets/clip-spin.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:08</span>
+            <span class="vcard2__dur">0:08</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
             <h3>Drehmoment</h3>
             <p>einmal um sich selbst.</p>
           </div>
         </article>
 
-        <article class="vcard">
-          <div class="vcard__media">
-            <video src="assets/clip-hug.mp4" muted loop playsinline preload="metadata"></video>
-            <button class="vcard__play" aria-label="abspielen">
+        <article class="vcard2">
+          <div class="vcard2__media">
+            <video src="assets/squig-donut.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
               <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
             </button>
-            <span class="vcard__dur">0:11</span>
+            <span class="vcard2__dur">0:08</span>
           </div>
-          <div class="vcard__body">
+          <div class="vcard2__body">
+            <h3>Donutti</h3>
+            <p>einmal beißen. einmal staunen.</p>
+          </div>
+        </article>
+
+        <article class="vcard2">
+          <div class="vcard2__media">
+            <video src="assets/clip-hug.mp4" muted loop playsinline preload="metadata"></video>
+            <button class="vcard2__fs" aria-label="groß ansehen" title="groß ansehen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+            <button class="vcard2__play" aria-label="abspielen">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            </button>
+            <span class="vcard2__dur">0:11</span>
+          </div>
+          <div class="vcard2__body">
             <h3>fest gedrückt</h3>
             <p>einer braucht's, einer gibt's.</p>
           </div>
@@ -610,6 +725,18 @@
 
   </div>
 
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Bildansicht">
+    <button class="lightbox__close" id="lbClose" aria-label="schließen">×</button>
+    <span class="lightbox__counter" id="lbCounter">1 / 1</span>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="vorheriges Bild">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="nächstes Bild">›</button>
+    <div class="lightbox__stage" id="lbStage">
+      <!-- media inserted here -->
+      <div class="lightbox__caption" id="lbCaption"></div>
+    </div>
+  </div>
+
   <!-- ============ TWEAKS PANEL ============ -->
   <aside class="tweaks" id="tweaksPanel" aria-label="Tweaks">
     <div class="tweaks__head">
@@ -689,6 +816,228 @@
     }/*EDITMODE-END*/;
   </script>
   <script src="tweaks.js"></script>
-  <script src="app.js"></script>
+
+  <!-- v2 specific JS: filter (gallery2 + thumbs), lightbox, video play -->
+  <script>
+    // ============ FILTER (gallery2 cards + thumbs) ============
+    (() => {
+      const chips = document.querySelectorAll('.chip');
+      const cards = document.querySelectorAll('#galleryGrid .card2');
+      const thumbs = document.querySelectorAll('#thumbStrip .thumb');
+      const counts = document.querySelectorAll('.chip__count');
+
+      const tally = { all: cards.length + thumbs.length };
+      [...cards, ...thumbs].forEach(el => {
+        const c = el.dataset.color;
+        if (c && c !== 'all') tally[c] = (tally[c] || 0) + 1;
+      });
+      counts.forEach(el => {
+        const k = el.dataset.count;
+        el.textContent = tally[k] || 0;
+      });
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('is-active'));
+          chip.classList.add('is-active');
+          const f = chip.dataset.filter;
+          [...cards, ...thumbs].forEach(el => {
+            const match = f === 'all' || el.dataset.color === f;
+            el.classList.toggle('is-hidden', !match);
+          });
+        });
+      });
+    })();
+
+    // ============ VIDEO CARDS ============
+    (() => {
+      document.querySelectorAll('.vcard2__play').forEach(btn => {
+        const v = btn.parentElement.querySelector('video');
+        if (!v) return;
+        btn.addEventListener('click', () => {
+          if (v.paused) {
+            v.play();
+            btn.classList.add('is-playing');
+          } else {
+            v.pause();
+            btn.classList.remove('is-playing');
+          }
+        });
+        const io = new IntersectionObserver((ents) => {
+          ents.forEach(e => {
+            if (!e.isIntersecting && !v.paused) {
+              v.pause();
+              btn.classList.remove('is-playing');
+            }
+          });
+        }, { threshold: 0.25 });
+        io.observe(v);
+      });
+    })();
+
+    // ============ FORM ============
+    (() => {
+      const form = document.getElementById('commissionForm');
+      if (!form) return;
+      const sizeInputs = form.querySelectorAll('input[name="size"]');
+      const priceEl = document.getElementById('priceAmt');
+      const okEl = document.getElementById('formOk');
+
+      const PRICE = { small: '€38', medium: '€58', large: '€85' };
+      sizeInputs.forEach(i => i.addEventListener('change', () => {
+        priceEl.textContent = PRICE[i.value] || '€38';
+      }));
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        if (!name || !email) {
+          form.querySelector('input[required]:invalid')?.focus();
+          return;
+        }
+        okEl.hidden = false;
+        const r = okEl.getBoundingClientRect();
+        if (r.bottom > window.innerHeight) {
+          window.scrollTo({ top: window.scrollY + r.bottom - window.innerHeight + 24, behavior: 'smooth' });
+        }
+        form.querySelector('button[type=submit]').disabled = true;
+        form.querySelector('button[type=submit]').textContent = 'gesendet ♡';
+      });
+    })();
+
+    // ============ LIGHTBOX ============
+    (() => {
+      const lb = document.getElementById('lightbox');
+      const stage = document.getElementById('lbStage');
+      const cap = document.getElementById('lbCaption');
+      const counter = document.getElementById('lbCounter');
+      const btnClose = document.getElementById('lbClose');
+      const btnPrev = document.getElementById('lbPrev');
+      const btnNext = document.getElementById('lbNext');
+
+      // Collect all media into a single browsable list
+      // Cards first (with rich captions), then thumbs (name + tag), then videos at the end
+      const items = [];
+
+      document.querySelectorAll('#galleryGrid .card2').forEach(card => {
+        const img = card.querySelector('img');
+        const name = card.querySelector('.row b')?.textContent.trim() || '';
+        const tag = card.querySelector('.row .tag')?.textContent.trim() || '';
+        const quote = card.querySelector('.quote')?.textContent.trim() || '';
+        items.push({ type: 'image', src: img.src, alt: img.alt, name, tag, quote, el: card });
+      });
+
+      document.querySelectorAll('#thumbStrip .thumb').forEach(t => {
+        items.push({
+          type: 'image',
+          src: t.dataset.src || t.querySelector('img').src,
+          alt: t.querySelector('img').alt,
+          name: t.dataset.name || '',
+          tag: t.dataset.tag || '',
+          quote: '',
+          el: t
+        });
+      });
+
+      document.querySelectorAll('.vcard2').forEach(vc => {
+        const v = vc.querySelector('video');
+        const h3 = vc.querySelector('h3')?.textContent.trim() || '';
+        const p = vc.querySelector('p')?.textContent.trim() || '';
+        items.push({ type: 'video', src: v?.src, alt: h3, name: h3, tag: '', quote: p, el: vc });
+      });
+
+      let idx = 0;
+
+      function render() {
+        const it = items[idx];
+        // clear existing media (preserve caption div)
+        [...stage.querySelectorAll('img, video')].forEach(n => n.remove());
+
+        let node;
+        if (it.type === 'video') {
+          node = document.createElement('video');
+          node.src = it.src;
+          node.controls = true;
+          node.autoplay = true;
+          node.loop = true;
+          node.playsInline = true;
+        } else {
+          node = document.createElement('img');
+          node.src = it.src;
+          node.alt = it.alt || '';
+        }
+        stage.insertBefore(node, cap);
+
+        // caption
+        const parts = [];
+        if (it.name) parts.push(`<b>${it.name}</b>`);
+        if (it.quote) parts.push(`„${it.quote.replace(/^„|"$/g, '')}"`);
+        if (it.tag) parts.push(`<span class="tag">${it.tag}</span>`);
+        cap.innerHTML = parts.join(' ');
+        cap.style.display = parts.length ? '' : 'none';
+
+        counter.textContent = `${idx + 1} / ${items.length}`;
+      }
+
+      function open(i) {
+        idx = (i + items.length) % items.length;
+        lb.hidden = false;
+        document.body.classList.add('lb-open');
+        render();
+      }
+      function close() {
+        // stop any playing video
+        const v = stage.querySelector('video');
+        if (v) { v.pause(); v.removeAttribute('src'); v.load(); }
+        lb.hidden = true;
+        document.body.classList.remove('lb-open');
+      }
+      function next() { idx = (idx + 1) % items.length; render(); }
+      function prev() { idx = (idx - 1 + items.length) % items.length; render(); }
+
+      // wire up triggers
+      items.forEach((it, i) => {
+        it.el.addEventListener('click', (e) => {
+          // for video cards, only open lightbox via the fullscreen button
+          if (it.type === 'video') {
+            if (e.target.closest('.vcard2__fs')) {
+              e.preventDefault();
+              e.stopPropagation();
+              open(i);
+            }
+            // otherwise let the play button handle it
+            return;
+          }
+          // for image cards / thumbs: open lightbox on any click
+          e.preventDefault();
+          open(i);
+        });
+      });
+
+      btnClose.addEventListener('click', close);
+      btnNext.addEventListener('click', next);
+      btnPrev.addEventListener('click', prev);
+      lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+
+      document.addEventListener('keydown', (e) => {
+        if (lb.hidden) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
+      });
+    })();
+
+    // ============ NAV smooth scroll ============
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const t = document.getElementById(id);
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.offsetTop - 12, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
