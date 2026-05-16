@@ -200,6 +200,25 @@ body::before {
   .nav__menu { display: none; }
 }
 
+/* Mobile nav — aufgeklappt */
+.nav { position: relative; }
+.nav--open .nav__links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0; right: 0;
+  background: var(--paper);
+  padding: 18px 24px 22px;
+  gap: 18px;
+  box-shadow: 0 10px 28px rgba(20,16,28,.13);
+  border-radius: 0 0 var(--r-m) var(--r-m);
+  z-index: 200;
+}
+@media (min-width: 720px) {
+  .nav--open .nav__links { position: static; flex-direction: row; box-shadow: none; padding: 0; }
+}
+
 /* =========================================================
    HERO — prominent featured video + bold typography
    ========================================================= */

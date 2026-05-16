@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.squigs.world">
 <meta property="og:title" content="Squigs — winzige Knetwesen">
-<meta property="og:description" content="Kleine Figuren aus lufttrocknender Knete, handgemacht in Berlin. Jedes Stück ein Unikat — adoptiere deinen Squig.">
+<meta property="og:description" content="Kleine Figuren aus lufttrocknender Knete, handgemacht in Berlin. Jedes Stück ein Unikat. Adoptiere deinen Squig.">
 <meta property="og:image" content="https://www.squigs.world/assets/squig-family-lineup.png">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Squigs">
@@ -173,7 +173,7 @@
         <figure class="card2" data-color="pink">
           <div class="card2__media"><img src="assets/squig-pink-blue.jpg" alt="Pim und Boop"></div>
           <figcaption>
-            <p class="quote">„pst — schon gehört?"</p>
+            <p class="quote">„pst, schon gehört?"</p>
             <div class="row"><b>Pim &amp; Boop</b><span class="tag">rosa · blau</span></div>
           </figcaption>
         </figure>
@@ -213,7 +213,7 @@
         <figure class="card2" data-color="green">
           <div class="card2__media"><img src="assets/squig-scale.jpg" alt="Grüner Squig auf der Waage, erschrocken"></div>
           <figcaption>
-            <p class="quote">„das war doch der toast schuld."</p>
+            <p class="quote">„da war doch der toast schuld."</p>
             <div class="row"><b>Klops</b><span class="tag">grün · Waage</span></div>
           </figcaption>
         </figure>
@@ -611,11 +611,12 @@
         <fieldset class="field field--group">
           <legend class="field__label">Hauptfarbe</legend>
           <div class="swatches">
-            <label class="swatch-pick"><input type="radio" name="color" value="pink" checked><span style="background:var(--pnk)"></span>rosa</label>
-            <label class="swatch-pick"><input type="radio" name="color" value="lavender"><span style="background:var(--lav)"></span>lavendel</label>
-            <label class="swatch-pick"><input type="radio" name="color" value="yellow"><span style="background:var(--yel)"></span>gelb</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="green" checked><span style="background:var(--mnt)"></span>grün</label>
             <label class="swatch-pick"><input type="radio" name="color" value="blue"><span style="background:var(--sky)"></span>blau</label>
-            <label class="swatch-pick"><input type="radio" name="color" value="green"><span style="background:var(--mnt)"></span>grün</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="lavender"><span style="background:var(--lav)"></span>lila</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="pink"><span style="background:var(--pnk)"></span>rosa</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="red"><span style="background:#D34F62"></span>rot</label>
+            <label class="swatch-pick"><input type="radio" name="color" value="yellow"><span style="background:var(--yel)"></span>gelb</label>
             <label class="swatch-pick"><input type="radio" name="color" value="surprise"><span class="swatch-pick__rainbow"></span>überrasch mich</label>
           </div>
           <label class="custom-color">
@@ -673,7 +674,7 @@
             </svg>
           </span>
           <div>
-            <b>E‑Mail wird geöffnet — fast geschafft!</b>
+            <b>E‑Mail wird geöffnet. Fast geschafft!</b>
             <p>Einfach noch auf „Senden" klicken. Ich melde mich innerhalb von 3 Tagen. ✿<br>
             <small>Bezahlung per PayPal · Versand nach Bezahlung · auf Wunsch gibt es vorher ein Foto oder Video</small></p>
           </div>
@@ -949,7 +950,7 @@
         const preview = form.querySelector('input[name="preview"]:checked')?.value || '';
         const SIZES = { small: 'winzig (~3 cm)', medium: 'normal (~5 cm)', large: 'pummelig (~8 cm)' };
         const PRICES = { small: '€29', medium: '€45', large: '€69' };
-        const PREVIEW = { ja: 'Ja, bitte — Foto/Video vor dem Versand', nein: 'Überrasch mich!' };
+        const PREVIEW = { ja: 'Ja, bitte. Foto/Video vor dem Versand.', nein: 'Überrasch mich!' };
 
         const subject = encodeURIComponent(`Squig-Bestellung von ${name}`);
         const body = encodeURIComponent(
@@ -958,7 +959,7 @@
           `Name: ${name}\n` +
           `E-Mail: ${email}\n` +
           `Farbe: ${color}${customColor ? ' / ' + customColor : ''}\n` +
-          `Größe: ${SIZES[size] || size} — ${PRICES[size] || ''}\n\n` +
+          `Größe: ${SIZES[size] || size}, ${PRICES[size] || ''}\n\n` +
           `Mein Wunsch:\n${story || '(keine Angabe)'}\n\n` +
           `── Lieferung ───────────────────────\n` +
           `Lieferadresse:\n${address || '(bitte noch eintragen)'}\n\n` +
@@ -1102,7 +1103,17 @@
       });
     })();
 
-    // ============ NAV smooth scroll ============
+    // ============ MOBILE NAV TOGGLE ============
+    (() => {
+      const menuBtn = document.querySelector('.nav__menu');
+      const nav = document.querySelector('.nav');
+      if (!menuBtn || !nav) return;
+      menuBtn.addEventListener('click', () => nav.classList.toggle('nav--open'));
+      document.querySelectorAll('.nav__links a').forEach(a =>
+        a.addEventListener('click', () => nav.classList.remove('nav--open'))
+      );
+    })();
+
     // ============ HERO VIDEO TOGGLE ============
     (() => {
       const btn = document.getElementById('heroLoopBtn');
