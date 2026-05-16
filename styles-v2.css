@@ -48,6 +48,13 @@
 }
 .card2:hover .card2__media img { transform: scale(1.025); }
 
+/* landscape images: crop to fixed height to avoid masonry gaps */
+.card2--landscape .card2__media img {
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
 .card2 figcaption {
   padding: 14px 14px 16px;
   display: flex;
