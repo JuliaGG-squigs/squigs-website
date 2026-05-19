@@ -8,6 +8,15 @@
     <priority>1.0</priority>
 
     <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/squig-family-lineup.png</video:thumbnail_loc>
+      <video:title>Squigs — Knetwesen aus Berlin</video:title>
+      <video:description>Willkommen in der Welt der Squigs — handgeformte Knetwesen aus einer kleinen Berliner Küche.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/hero.mp4</video:content_loc>
+      <video:duration>5</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
       <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/squig-clip-1.jpg</video:thumbnail_loc>
       <video:title>Atempause</video:title>
       <video:description>tief ein. tief aus. Ein kleiner Squig atmet durch.</video:description>
