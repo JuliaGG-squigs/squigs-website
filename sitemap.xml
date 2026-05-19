@@ -1,9 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.squigs.world/</loc>
-    <lastmod>2026-05-16</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/squig-clip-1.jpg</video:thumbnail_loc>
+      <video:title>Atempause</video:title>
+      <video:description>tief ein. tief aus. Ein kleiner Squig atmet durch.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/squig-clip-1.mp4</video:content_loc>
+      <video:duration>8</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/squig-clip-2.jpg</video:thumbnail_loc>
+      <video:title>Chill</video:title>
+      <video:description>Das Leben ist schön. Ein entspannter Moment aus dem Alltag der Squigs.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/squig-clip-2.mp4</video:content_loc>
+      <video:duration>12</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/squig-clip-3.jpg</video:thumbnail_loc>
+      <video:title>Der Hund muss raus</video:title>
+      <video:description>Auch wenn keiner so wirklich will. Eine kleine Gassi-Geschichte.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/squig-clip-3.mp4</video:content_loc>
+      <video:duration>6</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/squig-clip-4.jpg</video:thumbnail_loc>
+      <video:title>Frühlingsgefühle</video:title>
+      <video:description>Schaukeln geht immer. Ein Squig auf der Schaukel.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/squig-clip-4.mp4</video:content_loc>
+      <video:duration>9</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/squig-clip-5.jpg</video:thumbnail_loc>
+      <video:title>Training Day</video:title>
+      <video:description>Geht besser mit Freunden. Squigs beim gemeinsamen Training.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/squig-clip-5.mp4</video:content_loc>
+      <video:duration>11</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/squig-bedtime.jpg</video:thumbnail_loc>
+      <video:title>Gute-Nacht-Geschichten</video:title>
+      <video:description>Ein leiser Abend. Ein Squig macht es sich gemütlich für die Nacht.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/squig-bedtime.mp4</video:content_loc>
+      <video:duration>10</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/clip-cosy.jpg</video:thumbnail_loc>
+      <video:title>kleine Zauberei</video:title>
+      <video:description>Funken im Dunkeln. Sehr ernste Sache. Ein magischer Moment.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/clip-cosy.mp4</video:content_loc>
+      <video:duration>7</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/clip-roll.jpg</video:thumbnail_loc>
+      <video:title>kullern</video:title>
+      <video:description>So geht das auch. Ein Squig kullert durch die Szene.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/clip-roll.mp4</video:content_loc>
+      <video:duration>8</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/clip-jump.jpg</video:thumbnail_loc>
+      <video:title>K.O. in Runde eins</video:title>
+      <video:description>Der Boxsack hat aufgegeben. Das Publikum lacht. Squig beim Boxtraining.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/clip-jump.mp4</video:content_loc>
+      <video:duration>6</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/clip-walk.jpg</video:thumbnail_loc>
+      <video:title>die Waage ist gemein</video:title>
+      <video:description>Klops + 200 g. Muss am Toast liegen. Ein Squig auf der Waage.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/clip-walk.mp4</video:content_loc>
+      <video:duration>9</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/clip-spin.jpg</video:thumbnail_loc>
+      <video:title>Drehmoment</video:title>
+      <video:description>Einmal um sich selbst. Ein Squig dreht eine Runde.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/clip-spin.mp4</video:content_loc>
+      <video:duration>8</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/squig-donut.jpg</video:thumbnail_loc>
+      <video:title>Donutti</video:title>
+      <video:description>Einmal beißen. Einmal staunen. Ein Squig entdeckt einen Donut.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/squig-donut.mp4</video:content_loc>
+      <video:duration>8</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.squigs.world/assets/thumbs/clip-hug.jpg</video:thumbnail_loc>
+      <video:title>fest gedrückt</video:title>
+      <video:description>Einer braucht's, einer gibt's. Zwei Squigs in einer Umarmung.</video:description>
+      <video:content_loc>https://www.squigs.world/assets/clip-hug.mp4</video:content_loc>
+      <video:duration>11</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
 </urlset>
